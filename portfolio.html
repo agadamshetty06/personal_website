@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Portfolio - Aayush</title>
+    <link id="pagestyle" rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dd5f1cbefc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h2>My Projects</h2>
+    </header>
+    <main> 
+        <section class="portfolio-section">
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project1.png">
+                    </div>
+                    <div class="project-content">
+                        <h3>Algorithm Trading Indicator</h3>
+                        <p>Constructed a mid-frequency trading strategy using Pine Script and Python that, through back testing
+                            yielded a 32.59% return on XAU/USD (1 Hour Timeframe) from Jan 4, 2024, to Dec 27, 2024, outperformed its
+                            buy-and-hold by 4.52.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project2.jpg">
+                    </div>
+                    <div class="project-content">
+                        <h3>Escape Dungeon</h3>
+                        <p> Designed and implemented core gameplay mechanics for a top-down RPG in Unity using C.
+                            Developed and integrated 50+ custom sprites and 20+ tilemap assets, improving player engagement.
+                            Optimized game performance, reducing frame drops by 30% through efficient scripting practices.</p>
+                        <div class="project-links">
+                            <a href="https://www.youtube.com/watch?v=b8YUfee_pzc" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project3.jpg">
+                    </div>
+                    <div class="project-content">
+                        <h3>Aggie Poker</h3>
+                        <p>A web-based Texas Hold'em poker application developed using HTML5, CSS3, and vanilla JavaScript to 
+                            provide a responsive and interactive gaming experience. The project features a custom-built logic 
+                            engine to handle deck shuffling, hand evaluation, and betting cycles for a seamless browser-based 
+                            card game.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/moulivarma-tamu/poker" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project4.png">
+                    </div>
+                    <div class="project-content">
+                        <h3>Py Checkers</h3>
+                        <p>An interactive two-player Checkers game built with Python and Pygame featuring a custom-rendered 8x8 
+                            board and intuitive click-to-move mechanics. It implements core game logic including piece promotion 
+                            to Kings, valid move validation, and turn-based state management.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="dock-nav">
+        <a href="index.html" class="nav-item"><i class="fas fa-home"></i></a>
+        <a href="portfolio.html" class="nav-item"><i class="fas fa-user"></i></a>
+        <a href="qualifications.html" class="nav-item"><i class="fas fa-briefcase"></i></a>
+        <a href="service.html" class="nav-item"><i class="fas fa-hammer"></i></a>
+        <button id="theme-toggle" class="nav-item" aria-label="Toggle theme" title="Toggle theme"><i class="fas fa-adjust"></i></button>
+        <div class="divider"></div>
+    
+        <a href="https://github.com/agadamshetty06" target="_blank" class="nav-item"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/aayushgadamshetty" target="_blank" class="nav-item"><i class="fab fa-linkedin"></i></a>
+    </nav>
+
+    <script>
+      (function(){
+        const link = document.getElementById('pagestyle');
+        const btn = document.getElementById('theme-toggle');
+        if(!link) return;
+        const KEY = 'site:theme';
+        const isGenAI = location.pathname.endsWith('genai.html');
+        const apply = (name) => { link.href = name === 'style2' ? 'style2.css' : 'style.css'; localStorage.setItem(KEY, name); if(btn) btn.title = name === 'style2' ? 'Switch to original' : 'Switch to alternate'; };
+        if(isGenAI){ apply('style'); if(btn){ btn.style.display='none'; btn.disabled=true; } return; }
+        const stored = localStorage.getItem(KEY);
+        const defaultTheme = stored || 'style2';
+        if(btn) btn.addEventListener('click', () => apply(link.href.includes('style2') ? 'style' : 'style2'));
+        apply(defaultTheme);
+      })();
+    </script>
+</body>
+</html>

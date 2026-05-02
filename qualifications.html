@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Qualifications - Aayush</title>
+    <link id="pagestyle" rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dd5f1cbefc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h2>Qualifications</h2>
+    </header>
+
+    <main>
+        <section class="qualifications-section">
+            <div class="qual-card">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="qual-content">
+                    <p>I attended Rock Hill High School from 2020-2024, where I took Honors and AP classes, completing a total of 11 AP classes.
+                       I enrolled at Texas A&M University in Fall 2025 and am currently pursuing a Bachelor's degree in Computer Science (emphasis
+                        on Cloud Computing and Data Science) with minor in Cybersecurity, expected graduation Spring 2027.</p>
+                </div>
+            </div>
+
+            <div class="qual-card">
+                <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                <div class="qual-content skills-content">
+                    <img src="https://skillicons.dev/icons?i=java,python,r,cpp,html,css,js,linux,vscode,anaconda,haskell,git,github,docker&theme=light" alt="Technical Skills">
+                </div>
+            </div>
+            <br> 
+            </br>
+            <div class="qual-card">
+                <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                <div class="qual-content">
+                    <p><strong>Undergraduate Research Assistant - </strong> <a href="https://cailab-tamu.github.io/" target="_blank"><i class="fas fa-book"></i> Texas A&M</a></p>
+                    <p>Conducted single-cell RNA sequencing analysis of 5000+ colorectal cells to identify gene expression variability
+                      linked to early-stage cancer markers.</p>
+                    <p><strong>Software Engineering Intern - </strong> <a href="https://quila.app/" target="_blank"><i class="fas fa-computer"></i> Quila</a></p>
+                    <p>Developed and maintained APIs, enhancing system performance and ensuring seamless data integration across
+                       applications.</p>
+                    <p>Analyzed application performance metrics, identifying bottlenecks and implementing solutions that led to
+                        noticeable improvements in response times.</p>
+                </div>
+            </div>
+
+            <div class="qual-card">
+                <h2><i class="fas fa-file-pdf"></i> Resume</h2>
+                <div class="qual-content resume-content">
+                    <iframe src="assets/resume.pdf" width="100%" height="600" style="border: none; border-radius: 8px;"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="dock-nav">
+        <a href="index.html" class="nav-item"><i class="fas fa-home"></i></a>
+        <a href="portfolio.html" class="nav-item"><i class="fas fa-user"></i></a>
+        <a href="qualifications.html" class="nav-item"><i class="fas fa-briefcase"></i></a>
+        <a href="service.html" class="nav-item"><i class="fas fa-hammer"></i></a>
+        <button id="theme-toggle" class="nav-item" aria-label="Toggle theme" title="Toggle theme"><i class="fas fa-adjust"></i></button>
+        <div class="divider"></div>
+    
+        <a href="https://github.com/agadamshetty06" target="_blank" class="nav-item"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/aayushgadamshetty" target="_blank" class="nav-item"><i class="fab fa-linkedin"></i></a>
+    </nav>
+
+    <script>
+      (function(){
+        const link = document.getElementById('pagestyle');
+        const btn = document.getElementById('theme-toggle');
+        if(!link) return;
+        const KEY = 'site:theme';
+        const isGenAI = location.pathname.endsWith('genai.html');
+        const apply = (name) => { link.href = name === 'style2' ? 'style2.css' : 'style.css'; localStorage.setItem(KEY, name); if(btn) btn.title = name === 'style2' ? 'Switch to original' : 'Switch to alternate'; };
+        if(isGenAI){ apply('style'); if(btn){ btn.style.display='none'; btn.disabled=true; } return; }
+        const stored = localStorage.getItem(KEY);
+        const defaultTheme = stored || 'style2';
+        if(btn) btn.addEventListener('click', () => apply(link.href.includes('style2') ? 'style' : 'style2'));
+        apply(defaultTheme);
+      })();
+    </script>
+</body>
+</html>

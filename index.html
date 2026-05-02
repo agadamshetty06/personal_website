@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aayush</title>
+    <link id="pagestyle" rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dd5f1cbefc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="hello-banner">
+            <span class="rotating-text">مرحبا</span>
+            <span class="rotating-text">Hola</span>
+            <span class="rotating-text">Namaste</span>
+            <span class="rotating-text">Bonjour</span>
+            <span class="rotating-text">你好</span>
+            <span class="rotating-text">こんにちは</span>
+            <span class="rotating-text">Привет</span>
+            <span class="rotating-text">Ciao</span>
+            <span class="rotating-text">Olá</span>
+            <span class="rotating-text">안녕하세요</span>
+            <span class="rotating-text">Γεια σας</span>
+            <span class="rotating-text">Hej</span>
+            <span class="rotating-text">Sawubona</span>
+            <span class="rotating-text">שלום</span>
+            <span class="rotating-text">สวัสดี</span>
+            <span class="rotating-text">Xin chào</span>
+            <span class="rotating-text">Habari</span>
+            <span class="rotating-text">Aloha</span>
+            <span class="rotating-text">Molo</span>
+            <span class="rotating-text">Hallo</span>
+            <h1>HELLO</h1>
+        </div>  
+    </header>
+    <main> 
+        <section class="intro about-me">
+            <img src="assets/Aayush.jpg" alt="Aayush" class="profile-pic">
+            <div class="bio-text">
+                <h1> Howdy! </h1>
+                <p> Hey There! I'm Aayush Gadamshetty, a sophomore at Texas A&M University majoring
+                    in Computer Science. I am passionate about technology and software development.
+                    In my free time, I enjoy going to the gym, playing smash bros with friends, 
+                    and exploring new trends in tech. Alongside CS, I am also interested in finance and investing, 
+                    which I have actively pursued since childhood.. 
+                    <br><br>
+                    Feel free to explore my portfolio to learn more about my projects and experiences!
+                    I look forward to connecting with you. And remember, keep pushing your limits!
+                </p>
+            </div>
+        </section>
+
+        <section class="interests-section">
+            <h2>Emphasis Area & Interests</h2>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-title">Cloud Computing</div>
+                    <div class="interest-desc">
+                        My drive lies in creating solutions that bridge the gap between backend logic and
+                        user interfaces. I focus on developing responsive applications that solve real-world 
+                        problems while ensuring high performance and scalability within cloud environments. 
+                    </div>
+                    <a href="https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/" class="interest-link">AWS Cloud</a>
+                </div>
+
+                <div class="interest-card">
+                    <div class="interest-title">Cybersecurity</div>
+                    <div class="interest-desc">
+                        I believe that security starts with the very first line of code. My passion is rooted 
+                        in the "Secure by Design" philosophy, where I focus on building software that is inherently 
+                        resistant to vulnerabilities. By emphasizing best practices I will ensure that systems remain
+                        robust and understandable.
+                    </div>
+                    <a href="https://www.nist.gov/cyberframework" class="interest-link">NIST Framework</a>
+                </div>
+
+                <div class="interest-card">
+                    <div class="interest-title">Data Science</div>
+                    <div class="interest-desc">
+                        I am driven by the challenge of transforming raw data into meaningful stories that inform
+                        strategic decisions. I focus on the entire data lifecycle to enhance deployment of machine learning models. I aim to identify 
+                        patterns and build predictive solutions that drive innovation.
+                    </div>
+                    <a href="https://www.kaggle.com/learn" class="interest-link">Kaggle DS</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="dock-nav">
+        <a href="index.html" class="nav-item"><i class="fas fa-home"></i></a>
+        <a href="portfolio.html" class="nav-item"><i class="fas fa-user"></i></a>
+        <a href="qualifications.html" class="nav-item"><i class="fas fa-briefcase"></i></a>
+        <a href="service.html" class="nav-item"><i class="fas fa-hammer"></i></a>
+        <button id="theme-toggle" class="nav-item" aria-label="Toggle theme" title="Toggle theme"><i class="fas fa-adjust"></i></button>
+        <div class="divider"></div>
+    
+        <a href="https://github.com/agadamshetty06" target="_blank" class="nav-item"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/aayushgadamshetty" target="_blank" class="nav-item"><i class="fab fa-linkedin"></i></a>
+    </nav>
+
+<script>
+  (function(){
+    const link = document.getElementById('pagestyle');
+    const btn = document.getElementById('theme-toggle');
+    if(!link) return;
+    const KEY = 'site:theme';
+    const isGenAI = location.pathname.endsWith('genai.html');
+    const apply = (name) => {
+      link.href = name === 'style2' ? 'style2.css' : 'style.css';
+      localStorage.setItem(KEY, name);
+      if(btn) btn.title = name === 'style2' ? 'Switch to original' : 'Switch to alternate';
+    };
+
+    if (isGenAI) {
+      // genai must always use the original stylesheet
+      apply('style');
+      if (btn) { btn.style.display = 'none'; btn.disabled = true; btn.setAttribute('aria-hidden','true'); }
+      return;
+    }
+
+    const stored = localStorage.getItem(KEY);
+    const defaultTheme = stored || 'style2';
+    if (btn) btn.addEventListener('click', () => apply(link.href.includes('style2') ? 'style' : 'style2'));
+    apply(defaultTheme);
+  })();
+</script>
+
+</body>
+</html>

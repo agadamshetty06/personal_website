@@ -41,7 +41,7 @@
                 <p> Hey There! I'm Aayush Gadamshetty, a sophomore at Texas A&M University majoring
                     in Computer Science. I am passionate about technology and software development.
                     In my free time, I enjoy going to the gym, playing smash bros with friends, 
-                    and exploring new trends in tech. Alongside CS, I am also interested in finance and investing, 
+                    and exploring new trends in tech.Alongside CS, I am also interested in finance and investing, 
                     which I have actively pursued since childhood.. 
                     <br><br>
                     Feel free to explore my portfolio to learn more about my projects and experiences!
@@ -91,7 +91,6 @@
         <a href="index.html" class="nav-item"><i class="fas fa-home"></i></a>
         <a href="portfolio.html" class="nav-item"><i class="fas fa-user"></i></a>
         <a href="qualifications.html" class="nav-item"><i class="fas fa-briefcase"></i></a>
-        <a href="service.html" class="nav-item"><i class="fas fa-hammer"></i></a>
         <button id="theme-toggle" class="nav-item" aria-label="Toggle theme" title="Toggle theme"><i class="fas fa-adjust"></i></button>
         <div class="divider"></div>
     
@@ -111,13 +110,6 @@
       localStorage.setItem(KEY, name);
       if(btn) btn.title = name === 'style2' ? 'Switch to original' : 'Switch to alternate';
     };
-
-    if (isGenAI) {
-      // genai must always use the original stylesheet
-      apply('style');
-      if (btn) { btn.style.display = 'none'; btn.disabled = true; btn.setAttribute('aria-hidden','true'); }
-      return;
-    }
 
     const stored = localStorage.getItem(KEY);
     const defaultTheme = stored || 'style2';
